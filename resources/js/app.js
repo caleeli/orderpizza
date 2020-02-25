@@ -38,7 +38,7 @@ modules.keys().map(key => {
 const app = new Vue({
     router: window.router,
     el: '#app',
-    mixins: [window.workflowMixin, window.ResourceMixin],
+    mixins: [],
     data() {
         return {
             // Used to open the west menu in compact view

@@ -5,34 +5,25 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/caleeli/jdd-flow.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/caleeli/jdd-api.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/caleeli/pacman.git"
+            "url": "https://github.com/ProcessMaker/sdk-php.git"
         }
     ],
     "keywords": [
-        "coredump",
+        "order",
+        "pizza",
         "application",
         "laravel"
     ],
     "license": "LGPL-3.0-or-later",
     "require": {
         "php": "^7.1.3",
-        "coredump/jdd-api": "dev-master",
-        "coredump/jdd-flow": "dev-master",
-        "coredump/jdd-pacman": "dev-master",
         "darkaonline/l5-swagger": "^5.8",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/passport": "^7.3",
         "laravel/tinker": "^1.0",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "processmaker/sdk-php": "dev-master"
     },
     "require-dev": {
         "beyondcode\/laravel-dump-server": "^1.0",
@@ -75,9 +66,7 @@
             "vendor\/bin\/phpunit-doc > coverage\/doc.html"
         ],
         "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi",
-            "@php artisan jdd-package:update"
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump"
         ],
         "post-root-package-install": [
             "@php -r \"!file_exists('database\/database.sqlite') && file_put_contents('database\/database.sqlite', '');\"",
@@ -85,8 +74,7 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi",
-            "@php artisan storage:link",
-            "@php artisan app:install"
+            "@php artisan storage:link"
         ]
     }
 }

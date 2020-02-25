@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Coredump
+                    Order a Pizza
                 </div>
 
                 <div class="links">

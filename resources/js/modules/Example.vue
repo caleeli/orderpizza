@@ -1,18 +1,28 @@
 <template>
-  <panel name="Example" icon="fa fa-user" class="panel-success">
-    <datetime v-model="today"></datetime>
-    <button class="btn btn-primary" @click="callProcess('sample.bpmn')">Start Process</button>
+  <panel name="Principal" icon="fa fa-user" class="panel-success">
+    <button class="btn btn-primary" @click="orderPizza">Start PM4 Order Pizza</button>
   </panel>
 </template>
 
 <script>
 export default {
   path: "/",
-  mixins: [window.workflowMixin],
+  mixins: [],
   data() {
     return {
-      today: window.moment().format()
+      today: ''
     };
+  },
+  methods: {
+    orderPizza() {
+        window.axios({
+            method: 'post',
+            url: '/orderpizza',
+            data: {
+                type: ''
+            }
+        });
+    }
   }
 };
 </script>
